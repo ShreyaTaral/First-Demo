@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Account</title>
+</head>
+
+<body>
+
+    <h1>Create Account</h1>
+
+    {% if form.errors %}
+
+        <div style="color: red;">
+
+            <h3>Please fix the following errors:</h3>
+
+            {{ form.errors }}
+
+        </div>
+
+    {% endif %}
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <p>
+
+            <label>
+                Username:
+            </label>
+
+            {{ form.username }}
+
+        </p>
+
+
+        <p>
+
+            <label>
+                Email:
+            </label>
+
+            {{ form.email }}
+
+        </p>
+
+
+        <p>
+
+            <label>
+                Password:
+            </label>
+
+            {{ form.password1 }}
+
+        </p>
+
+
+        <p>
+
+            <label>
+                Confirm Password:
+            </label>
+
+            {{ form.password2 }}
+
+        </p>
+
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+
+    <br>
+
+    <a href="{% url 'accounts:login' %}">
+        Already have an account? Login
+    </a>
+
+    <br>
+
+    <a href="{% url 'accounts:home' %}">
+        Back to Home
+    </a>
+
+</body>
+
+</html>
