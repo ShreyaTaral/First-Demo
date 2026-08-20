@@ -17,6 +17,18 @@ def home(request):
         request,
         'accounts/home.html'
     )
+def about(request):
+
+    return render(
+        request,
+        'accounts/about.html'
+    )
+def contact(request):
+
+    return render(
+        request,
+        'accounts/contact.html'
+    )
 
 
 # ==========================================
